@@ -147,7 +147,7 @@ export default function TeacherSettings({ onStartGame, onCancel }: TeacherSettin
     return (
       <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8">
         <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-2xl w-full text-center">
-          <p className="text-lg font-potta-one text-gray-600">Đang tải cài đặt...</p>
+          <p className="text-lg text-gray-600">Đang tải cài đặt...</p>
         </div>
       </div>
     )
@@ -156,17 +156,17 @@ export default function TeacherSettings({ onStartGame, onCancel }: TeacherSettin
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-8">
       <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-2xl w-full">
-        <h1 className="text-4xl font-potta-one text-gray-800 mb-8 text-center">⚙ Cài Đặt cho Cô Giáo</h1>
+        <h1 className="text-4xl text-gray-800 mb-8 text-center">⚙ Cài Đặt cho Cô Giáo</h1>
 
         {/* Box count setting */}
         <div className="mb-8">
-          <h2 className="text-2xl font-potta-one text-gray-700 mb-4">Số Lượng Hộp Quà</h2>
+          <h2 className="text-2xl text-gray-700 mb-4">Số Lượng Hộp Quà</h2>
           <div className="flex gap-4 flex-wrap">
             {[3, 4, 6, 9, 12].map((count) => (
               <button
                 key={count}
                 onClick={() => handleBoxCountChange(count)}
-                className={`px-6 py-3 rounded-full font-potta-one text-lg transition-all active:scale-95 ${
+                className={`px-6 py-3 rounded-full text-lg transition-all active:scale-95 ${
                   boxCount === count
                     ? "bg-gradient-to-r from-blue-500 to-blue-600 text-white shadow-lg scale-110"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -180,11 +180,11 @@ export default function TeacherSettings({ onStartGame, onCancel }: TeacherSettin
 
         {/* Letter case setting */}
         <div className="mb-8">
-          <h2 className="text-2xl font-potta-one text-gray-700 mb-4">Chữ Hoa / Chữ Thường</h2>
+          <h2 className="text-2xl text-gray-700 mb-4">Chữ Hoa / Chữ Thường</h2>
           <div className="flex gap-4">
             <button
               onClick={() => handleLetterCaseChange('uppercase')}
-              className={`px-6 py-3 rounded-full font-potta-one text-lg transition-all active:scale-95 ${
+              className={`px-6 py-3 rounded-full text-lg transition-all active:scale-95 ${
                 letterCase === 'uppercase'
                   ? "bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-lg scale-110"
                   : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -194,7 +194,7 @@ export default function TeacherSettings({ onStartGame, onCancel }: TeacherSettin
             </button>
             <button
               onClick={() => handleLetterCaseChange('lowercase')}
-              className={`px-6 py-3 rounded-full font-potta-one text-lg transition-all active:scale-95 ${
+              className={`px-6 py-3 rounded-full text-lg transition-all active:scale-95 ${
                 letterCase === 'lowercase'
                   ? "bg-gradient-to-r from-purple-500 to-purple-600 text-white shadow-lg scale-110"
                   : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -207,13 +207,13 @@ export default function TeacherSettings({ onStartGame, onCancel }: TeacherSettin
 
         {/* Letter selection */}
         <div className="mb-8">
-          <h2 className="text-2xl font-potta-one text-gray-700 mb-4">Chọn Chữ Cái Tiếng Việt</h2>
+          <h2 className="text-2xl text-gray-700 mb-4">Chọn Chữ Cái Tiếng Việt</h2>
           <div className="grid grid-cols-6 sm:grid-cols-8 gap-3">
             {VIETNAMESE_LETTERS.map((letter) => (
               <button
                 key={letter}
                 onClick={() => toggleLetter(letter)}
-                className={`py-3 rounded-lg font-potta-one text-lg transition-all active:scale-95 ${
+                className={`py-3 rounded-lg text-lg transition-all active:scale-95 ${
                   selectedLetters.includes(letter)
                     ? "bg-gradient-to-r from-orange-400 to-orange-500 text-white shadow-lg scale-110"
                     : "bg-gray-200 text-gray-700 hover:bg-gray-300"
@@ -223,7 +223,7 @@ export default function TeacherSettings({ onStartGame, onCancel }: TeacherSettin
               </button>
             ))}
           </div>
-          <p className="text-sm font-potta-one text-gray-600 mt-4">Đã chọn: {selectedLetters.length} chữ cái</p>
+          <p className="text-sm text-gray-600 mt-4">Đã chọn: {selectedLetters.length} chữ cái</p>
         </div>
 
         {/* Word pool viewer section */}
@@ -231,21 +231,21 @@ export default function TeacherSettings({ onStartGame, onCancel }: TeacherSettin
           <Button
             onClick={() => setShowWordPool(!showWordPool)}
             variant="outline"
-            className="w-full mb-4 text-lg font-potta-one py-3 rounded-full border-2 bg-purple-50 text-purple-700 hover:bg-purple-100 transition-all"
+            className="w-full mb-4 text-lg py-3 rounded-full border-2 bg-purple-50 text-purple-700 hover:bg-purple-100 transition-all"
           >
             {showWordPool ? "▼ Ẩn" : "▶ Xem"} Pool Từ Vựng
           </Button>
 
           {showWordPool && (
             <div className="bg-gray-50 rounded-2xl p-6 border-2 border-purple-200">
-              <h3 className="text-xl font-potta-one text-purple-700 mb-4 text-center">
+              <h3 className="text-xl text-purple-700 mb-4 text-center">
                 📚 Pool Từ Vựng ({selectedLetters.length} chữ cái)
               </h3>
               <div className="space-y-4 max-h-96 overflow-y-auto">
                 {selectedLetters.length > 0 ? (
                   selectedLetters.map((letter) => (
                     <div key={letter} className="bg-white rounded-lg p-4 border border-gray-200 shadow-sm">
-                      <h4 className="text-3xl font-potta-one text-orange-600 mb-3 text-center border-b-2 border-orange-200 pb-2" style={{ lineHeight: '1.3', paddingTop: '0.2em', paddingBottom: '0.2em' }}>
+                      <h4 className="text-3xl text-orange-600 mb-3 text-center border-b-2 border-orange-200 pb-2" style={{ lineHeight: '1.3', paddingTop: '0.2em', paddingBottom: '0.2em' }}>
                         {letterCase === 'uppercase' ? letter.toUpperCase() : letter}
                       </h4>
                       {VOCABULARY[letter] ? (
@@ -265,7 +265,7 @@ export default function TeacherSettings({ onStartGame, onCancel }: TeacherSettin
                     </div>
                   ))
                 ) : (
-                  <p className="text-center text-gray-500 font-potta-one">Chưa chọn chữ cái nào</p>
+                  <p className="text-center text-gray-500">Chưa chọn chữ cái nào</p>
                 )}
               </div>
             </div>
@@ -277,7 +277,7 @@ export default function TeacherSettings({ onStartGame, onCancel }: TeacherSettin
           <Button
             onClick={handleStart}
             disabled={selectedLetters.length === 0}
-            className="flex-1 font-potta-one bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-white text-lg py-6 rounded-full disabled:opacity-50 transition-all active:scale-95"
+            className="flex-1 bg-gradient-to-r from-green-400 to-green-500 hover:from-green-500 hover:to-green-600 text-white text-lg py-6 rounded-full disabled:opacity-50 transition-all active:scale-95"
           >
             ▶ Bắt Đầu Chơi
           </Button>
@@ -287,7 +287,7 @@ export default function TeacherSettings({ onStartGame, onCancel }: TeacherSettin
               onCancel()
             }}
             variant="outline"
-            className="flex-1 font-potta-one text-lg py-6 rounded-full border-2 bg-transparent transition-all active:scale-95"
+            className="flex-1 text-lg py-6 rounded-full border-2 bg-transparent transition-all active:scale-95"
           >
             ✕ Hủy
           </Button>

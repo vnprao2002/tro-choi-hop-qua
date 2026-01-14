@@ -75,7 +75,8 @@
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
+  /* Đặt Lexend làm font chữ chính (font-sans) */
+  --font-sans: var(--font-lexend), 'Lexend', system-ui, sans-serif;
   --font-mono: 'Geist Mono', 'Geist Mono Fallback';
   --color-background: var(--background);
   --color-foreground: var(--foreground);

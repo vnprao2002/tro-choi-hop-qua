@@ -37,8 +37,6 @@ const playModalSound = () => {
 }
 
 export default function ResultModal({ letter, word, image, letterCase, onNext, onPlayAgain, onGoHome }: ResultModalProps) {
-  // Random chọn font Dancing Script hoặc Pacifico (dựa trên letter để consistent)
-  const letterFont = letter.charCodeAt(0) % 2 === 0 ? 'font-dancing-script' : 'font-pacifico'
   const displayLetter = letterCase === 'uppercase' ? letter.toUpperCase() : letter
   
   React.useEffect(() => {
@@ -50,9 +48,10 @@ export default function ResultModal({ letter, word, image, letterCase, onNext, o
       <div className="bg-white rounded-3xl shadow-2xl p-8 max-w-lg w-full text-center animate-scale-in overflow-visible">
         <div className="mb-6 min-h-[250px] flex items-center justify-center px-4 pt-2 pb-8">
           <div 
-            className={`${letterFont} text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 drop-shadow-lg animate-letter-grow break-words overflow-visible`} 
+            className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-blue-500 drop-shadow-lg animate-letter-grow break-words overflow-visible" 
             style={{ 
-              fontSize: displayLetter.length > 1 ? 'clamp(4rem, 12vw, 8rem)' : 'clamp(6rem, 15vw, 12rem)', 
+              // Tăng kích thước chữ cái cho rõ hơn, đặc biệt khi chỉ có 1 ký tự
+              fontSize: displayLetter.length > 1 ? 'clamp(5rem, 14vw, 9rem)' : 'clamp(7rem, 18vw, 14rem)', 
               lineHeight: '1.3',
               maxWidth: '100%',
               wordBreak: 'break-word',

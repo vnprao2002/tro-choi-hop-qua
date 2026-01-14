@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, Lexend, Potta_One, Dancing_Script, Pacifico, Montserrat } from 'next/font/google'
+import { Geist, Geist_Mono, Lexend, Potta_One, Montserrat } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
@@ -13,16 +13,6 @@ const lexend = Lexend({
 const pottaOne = Potta_One({ 
   subsets: ["latin"],
   variable: '--font-potta-one',
-  weight: '400'
-});
-const dancingScript = Dancing_Script({ 
-  subsets: ["latin"],
-  variable: '--font-dancing-script',
-  weight: ['400', '500', '600', '700']
-});
-const pacifico = Pacifico({ 
-  subsets: ["latin"],
-  variable: '--font-pacifico',
   weight: '400'
 });
 const montserrat = Montserrat({ 
@@ -62,7 +52,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased ${lexend.variable} ${pottaOne.variable} ${dancingScript.variable} ${pacifico.variable} ${montserrat.variable}`}>
+      <body className={`font-sans antialiased ${lexend.variable} ${pottaOne.variable} ${montserrat.variable}`}>
         {children}
         <Analytics />
       </body>

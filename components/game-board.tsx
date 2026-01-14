@@ -97,7 +97,7 @@ export default function GameBoard({ config, onBack }: GameBoardProps) {
 
       {/* Top bar */}
       <div className="relative z-10 flex flex-col sm:flex-row justify-between items-center w-full max-w-6xl mb-8 gap-4">
-        <h1 className="text-3xl sm:text-4xl font-potta-one text-orange-600 drop-shadow-lg">Trò Chơi Mở Hộp Quà</h1>
+        <h1 className="text-3xl sm:text-4xl text-orange-600 drop-shadow-lg">Trò Chơi Mở Hộp Quà</h1>
         <div className="flex gap-3">
           <Button onClick={handlePlayAgain} variant="outline" className="rounded-full bg-white/80 backdrop-blur-sm">
             🔄 Tải Lại

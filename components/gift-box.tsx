@@ -135,8 +135,7 @@ const playSound = (type: "open" | "reveal" | "click" | "fireworks") => {
 export default function GiftBox({ id, letter, imageUrl, isOpened, showLetter, showFullResult, letterCase, onClick }: GiftBoxProps) {
   const [isShaking, setIsShaking] = useState(false)
   const [showFireworks, setShowFireworks] = useState(false)
-  // Random chọn font Dancing Script hoặc Pacifico dựa trên letter để consistent
-  const letterFont = letter.charCodeAt(0) % 2 === 0 ? 'font-dancing-script' : 'font-pacifico'
+  // Dùng font mặc định (Lexend) cho chữ cái
   
   const displayLetter = letterCase === 'uppercase' ? letter.toUpperCase() : letter
 
@@ -198,7 +197,7 @@ export default function GiftBox({ id, letter, imageUrl, isOpened, showLetter, sh
         {isOpened && showLetter && !showFullResult && (
           <div className="absolute inset-0 flex items-center justify-center relative px-4 py-8">
             <span
-              className={`text-8xl ${letterFont} text-white drop-shadow-lg animate-letter-fade-in`}
+              className="text-8xl text-white drop-shadow-lg animate-letter-fade-in"
               style={{ 
                 filter: "blur(4px)",
                 opacity: 0.5,
@@ -217,7 +216,7 @@ export default function GiftBox({ id, letter, imageUrl, isOpened, showLetter, sh
         {isOpened && showFullResult && (
           <div className="absolute inset-0 flex items-center justify-center relative px-4 py-8">
             <span 
-              className={`text-8xl ${letterFont} text-white drop-shadow-lg animate-letter-grow`}
+              className="text-8xl text-white drop-shadow-lg animate-letter-grow"
               style={{
                 lineHeight: '1.3',
                 paddingTop: '0.2em',
